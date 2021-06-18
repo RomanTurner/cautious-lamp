@@ -10,6 +10,9 @@ export default Drawer =() => {
     return (
       <div className={drawerClasses}>
         <h1>Hello, I'm sliding!</h1>
+        <ul>
+          <li>list item </li>
+        </ul>
       </div>
     );
 }
