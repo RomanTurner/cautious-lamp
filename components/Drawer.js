@@ -12,6 +12,8 @@ export default Drawer =() => {
         <h1>Hello, I'm sliding!</h1>
         <ul>
           <li>list item </li>
+          <li>list item </li>
+          <li>list item </li>
         </ul>
       </div>
     );
