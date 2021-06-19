@@ -27,7 +27,17 @@ const projects = [
 
 
 export default function Home() {
-  const [open, isOpen] = useState(false)
+  const [open, setOpen] = useState('card')
+
+  const handleClick = () => {
+    if (open === 'card') {
+      console.log(open)
+      setOpen("test");
+    } else {
+      setOpen("card");
+      console.log(open)
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -41,15 +51,20 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <button onClick={()=>isOpen(!open)}>Open Drawer</button>
+        <button onClick={()=> handleClick()}>Open Drawer</button>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
-          {projects.map((project) => {
-            return <Card {...project}/>
+          { projects.map((project) => {
+            const testObj = {
+              "card": () => ( <Card {...project} />),
+              "test": () => ( <Test {...project} />),
+            };
+            console.log(testObj[`${open}`]);
+            return testObj[`${open}`]
           })}
         </div>
       </main>
