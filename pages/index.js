@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
 import Card from '../components/Card'
+import Test from '../components/Test'
 import Drawer from '../components/Drawer'
 import styles from '../styles/Home.module.css'
 
@@ -27,17 +28,9 @@ const projects = [
 
 
 export default function Home() {
-  const [open, setOpen] = useState('card')
+  const [open, isOpen] = useState(false)
 
-  const handleClick = () => {
-    if (open === 'card') {
-      console.log(open)
-      setOpen("test");
-    } else {
-      setOpen("card");
-      console.log(open)
-    }
-  }
+
 
   return (
     <div className={styles.container}>
@@ -51,7 +44,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <button onClick={()=> handleClick()}>Open Drawer</button>
+        <button onClick={()=> isOpen(!open)}>Open Drawer</button>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
@@ -59,12 +52,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           { projects.map((project) => {
-            const testObj = {
-              "card": () => ( <Card {...project} />),
-              "test": () => ( <Test {...project} />),
-            };
-            console.log(testObj[`${open}`]);
-            return testObj[`${open}`]
+            open ? <Card {...project} /> : <Test {...project} />
           })}
         </div>
       </main>
