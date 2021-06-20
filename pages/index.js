@@ -37,6 +37,13 @@ export default function Home() {
   };
     return testObj[open]
   }
+  const handleClick = () => {
+    if (open === 'card') {
+      isOpen('test')
+    } else {
+      isOpen('card')
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -50,16 +57,16 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <button onClick={()=> isOpen(!open)}>Open Drawer</button>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
         <div className={styles.grid}>
           {projects.map((project) => {
-          return testFunc(project)
+            return testFunc(project)
           })}
         </div>
+          <button onClick={()=> handleClick()}>Open Drawer</button>
       </main>
 
       <footer className={styles.footer}>
