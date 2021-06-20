@@ -28,9 +28,15 @@ const projects = [
 
 
 export default function Home() {
-  const [open, isOpen] = useState(false)
+  const [open, isOpen] = useState('card')
 
-
+  const testFunc = (args) => {
+  const testObj = {
+    test: <Test key={args.title} {...args} />,
+    card: <Card key={args.title} {...args} />,
+  };
+    return testObj[open]
+  }
 
   return (
     <div className={styles.container}>
@@ -49,10 +55,9 @@ export default function Home() {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
-
         <div className={styles.grid}>
           {projects.map((project) => {
-            open ? <Card {...project} /> : <Test {...project} />
+          return testFunc(project)
           })}
         </div>
       </main>
