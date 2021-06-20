@@ -51,7 +51,7 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          { projects.map((project) => {
+          {projects.map((project) => {
             open ? <Card {...project} /> : <Test {...project} />
           })}
         </div>
