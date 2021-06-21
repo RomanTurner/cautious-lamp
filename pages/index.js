@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Feed from '../components/Feed'
+import React, { useState } from 'react'
 import Drawer from '../components/Drawer'
 import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
 
 
 export default function Home() {
-   
+       const [open, isOpen] = useState(false);
   return (
     <div className={styles.container}>
       <Head>
@@ -16,8 +17,11 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={styles.main}>
-        <Header/>
-        <Drawer/>
+        <header>
+          <Header />
+          <button onClick={() => isOpen(!open)}>Menu</button>
+          <Drawer open={open} />
+        </header>
         <section>
           <Feed />
         </section>
