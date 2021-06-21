@@ -48,6 +48,10 @@ const projects = [
     title: "Flavorites",
     description: "This is an example"
   },
+  {
+    title: "Flavorites",
+    description: "This is an example"
+  },
  
 ]
 
