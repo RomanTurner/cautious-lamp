@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Drawer.module.css";
 
 const Drawer = () => {
-
-    let drawerClasses = "side-drawer";
+ 
+  let drawerClasses = "side-drawer";
 
     return (
       <div className={drawerClasses}>

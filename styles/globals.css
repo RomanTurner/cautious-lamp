@@ -7,6 +7,10 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+.icons {
+font-size: 1.75rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;
