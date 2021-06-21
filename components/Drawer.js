@@ -1,9 +1,7 @@
 import React from "react";
 import "../styles/Drawer.module.css";
 
-
-export default Drawer =() => {
-
+const Drawer = () => {
 
     let drawerClasses = "side-drawer";
 
@@ -21,4 +19,5 @@ export default Drawer =() => {
     );
 }
 
+export default Drawer;
 
